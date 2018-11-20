@@ -24,7 +24,7 @@ function CartService($http){
         return $http({
             url:`/cart-items/${editItem.id}`,
             method: "PUT",
-            data: editedItems
+            data: editedItem
         });
     };
 }
