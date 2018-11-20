@@ -1,4 +1,17 @@
 <h1> Shopping List Helper</h1>
-<ul>
-    <li ng-repeat="item in $ctrl.listOfItems">{{item.product}} {{item.price}} {{item.quantity}}</li>
-</ul>
+<form ng-submit="$ctrl.addItems($ctrl.newItem);">
+    <input type="text" ng-model="$ctrl.newItem.product">
+    <input type="text" ng-model="$ctrl.newItem.price">
+    <input type="text" ng-model="$ctrl.newItem.quantity">
+    <button>Add to List</button>
+</form>
+
+
+<section ng-repeat="item in $ctrl.listOfItems">
+    <input type="text" class="update-input" ng-blur="$ctrl.updateItem(item)" ng-model="item.product">
+    <input type="text" class="update-input" ng-blur="$ctrl.updateItem(item)" ng-model="item.price">
+    <input type="text" class="update-input" ng-blur="$ctrl.updateItem(item)" ng-model="item.quantity">
+    <button ng-click="$ctrl.deleteItem(item.id)">X</button>
+</section>
+   
+

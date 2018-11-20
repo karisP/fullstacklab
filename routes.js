@@ -39,4 +39,19 @@ cart.get("/cart-items", (req , res) => {
     res.json(cartItems);
 });
 
+cart.post("/cart-items", (req , res) => {
+    cartItems.push(req.body);
+    res.json(cartItems);
+});
+
+cart.put("/cart-items/:id", (req, res) => {
+    cartItems[req.params.id] = req.body;
+    res.json(cartItems);
+});
+
+cart.delete("/cart-items/:id", (req,res) => {
+    cartItems.splice(req.params.id, 1);
+    res.json(cartItems);
+});
+
 module.exports = cart;

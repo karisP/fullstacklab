@@ -10,23 +10,23 @@ const shoppingCart = {
         });
 
 
-        // vm.addItems = (newItem) => {
-        //     CartService.postItems(newItem).then((result) => {
-        //         vm.listOfItems = response.data;
-        //     });
-        // };
+        vm.addItems = (newItem) => {
+            CartService.postItems(newItem).then((response) => {
+                vm.listOfItems = response.data;
+            });
+        };
 
-        // vm.deleteItem = (id) => {
-        //     CartService.deleteItems(id).then((result) => {
-        //         vm.listOfItems = response.data;
-        //     });
-        // };
+        vm.deleteItem = (id) => {
+            CartService.deleteItems(id).then((response) => {
+                vm.listOfItems = response.data;
+            });
+        };
         
-        // vm.updateItems = (editedItem) => {
-        //     CartService.updateItems(editedItem).then((result) => {
-        //         vm.listOfItems = response.data;
-        //     });
-        // };
+        vm.updateItems = (editedItem) => {
+            CartService.updateItems(editedItem).then((response) => {
+                vm.listOfItems = response.data;
+            });
+        };
 
     }]
 };

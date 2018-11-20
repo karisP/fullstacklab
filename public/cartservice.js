@@ -22,7 +22,7 @@ function CartService($http){
     };
     self.updateItems = (editedItem) => {
         return $http({
-            url:`/cart-items/${editItem.id}`,
+            url:`/cart-items/${editItemed.id}`,
             method: "PUT",
             data: editedItem
         });
