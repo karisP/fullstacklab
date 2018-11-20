@@ -1,11 +1,6 @@
 "use strict";
 const shoppingCart = {
-    template: `
-    <h1> Shopping List Helper</h1>
-    <ul>
-        <li ng-repeat="item in $ctrl.listOfItems">{{item.product}} {{item.price}} {{item.quantity}}</li>
-    </ul>
-    `,
+    templateUrl: "shopping-cart.html",
     controller: ["CartService", function (CartService) {
         const vm = this;
         CartService.getItems().then((response) => {
