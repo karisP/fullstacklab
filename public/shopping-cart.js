@@ -3,28 +3,28 @@ const shoppingCart = {
     templateUrl: "shopping-cart.html",
     controller: ["CartService", function (CartService) {
         const vm = this;
-        CartService.getItems().then((response) => {
-            console.log(response);
-            vm.listOfItems = response.data;
+
+        CartService.getItems().then((result) => {
+            vm.listOfItems = result.data;
             console.log(vm.listOfItems);
         });
 
 
         vm.addItems = (newItem) => {
-            CartService.postItems(newItem).then((response) => {
-                vm.listOfItems = response.data;
+            CartService.postItems(newItem).then((result) => {
+                vm.listOfItems = result.data;
             });
         };
 
         vm.deleteItem = (id) => {
-            CartService.deleteItems(id).then((response) => {
-                vm.listOfItems = response.data;
+            CartService.deleteItems(id).then((result) => {
+                vm.listOfItems = result.data;
             });
         };
         
         vm.updateItems = (editedItem) => {
-            CartService.updateItems(editedItem).then((response) => {
-                vm.listOfItems = response.data;
+            CartService.updateItems(editedItem).then((result) => {
+                vm.listOfItems = result.data;
             });
         };
 
