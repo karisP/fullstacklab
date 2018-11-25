@@ -25,6 +25,7 @@ const shoppingCart = {
         vm.updateItems = (editedItem) => {
             CartService.updateItems(editedItem).then((result) => {
                 vm.listOfItems = result.data;
+                console.log(vm.listOfItems);
             });
         };
 

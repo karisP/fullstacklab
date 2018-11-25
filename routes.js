@@ -17,7 +17,7 @@ cart.put("/cart-items/:id", (req, res) => {
             pool.query("SELECT * FROM shopping_cart order by id").then((result) => {
                 res.json(result.rows);
             });
-        });
+    });
 });
 
 cart.delete("/cart-items/:id", (req,res) => {
@@ -29,19 +29,19 @@ cart.delete("/cart-items/:id", (req,res) => {
     });
 });
 
-cart.post("/cart-items", (req, res)=>{
-    console.log(typeof req.body.price);
-    console.log(typeof req.body.quantity);
-  });
-
 // cart.post("/cart-items", (req, res)=>{
-//     pool.query("INSERT INTO shopping_cart(product,price,quantity) VALUES($1::text, $2::int, $3::int)",
-//     [req.body.product, req.body.price, req.body.quantity]).then(() => {
-//         pool.query("SELECT * FROM shopping_cart order by id").then((result) =>{
-//             res.json(result.rows);
-//         });
-//     });
-// });
+//     console.log(typeof req.body.price);
+//     console.log(typeof req.body.quantity);
+//   });
+
+cart.post("/cart-items", (req, res)=>{
+    pool.query("INSERT INTO shopping_cart(product,price,quantity)VALUES($1::text, $2::int, $3::int)",
+    [req.body.product, req.body.price, req.body.quantity]).then(() => {
+        pool.query("SELECT * FROM shopping_cart order by id").then((result) =>{
+            res.json(result.rows);
+        });
+    });
+});
 
 
 

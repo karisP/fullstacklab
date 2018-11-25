@@ -8,9 +8,9 @@
 
 
 <section ng-repeat="item in $ctrl.listOfItems">
-    <input type="text" class="update-input" ng-blur="$ctrl.updateItem(item)" ng-model="item.product">
-    <input type="text" class="update-input" ng-blur="$ctrl.updateItem(item)" ng-model="item.price">
-    <input type="text" class="update-input" ng-blur="$ctrl.updateItem(item)" ng-model="item.quantity">
+    <input type="text" class="update-input" ng-blur="$ctrl.updateItems(item)" ng-model="item.product">
+    <input type="number" class="update-input" ng-blur="$ctrl.updateItems(item)" ng-model="item.price">
+    <input type="number" class="update-input" ng-blur="$ctrl.updateItems(item)" ng-model="item.quantity">
     <button ng-click="$ctrl.deleteItem(item.id)">X</button>
 </section>
    
